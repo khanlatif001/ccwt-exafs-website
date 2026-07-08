@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}CCWT-EXAFS{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-mark">CCWT</span>
+        <span class="brand-sub">Continuous Cauchy Wavelet Transform of EXAFS Signals</span>
+      </div>
+      <nav>
+        <a href="{{ url_for('index') }}">Analyze</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-box">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Method: Munoz M., Argoul P. &amp; Farges F. (2003), <em>Continuous Cauchy wavelet transform analyses of EXAFS spectra: a qualitative approach.</em> American Mineralogist 88, 694&ndash;700.</p>
+    </div>
+  </footer>
+</body>
+</html>

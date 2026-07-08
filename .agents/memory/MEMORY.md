@@ -1,0 +1,1 @@
+- [Plotly multi-chart ordering](plotly-multichart-ordering.md) — when embedding multiple `fig.to_html(full_html=False, ...)` snippets on one page, the CDN-loading chart must be the first one in DOM order.

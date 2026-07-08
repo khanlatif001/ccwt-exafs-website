@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Analyze EXAFS Data — CCWT{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Analyze your EXAFS signal</h1>
+  <p>Upload a two-column data file (k, χ(k)) to compute its Continuous Cauchy Wavelet Transform and view interactive plots.</p>
+</section>
+
+<section class="card">
+  <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+    <div class="field">
+      <label for="datafile">Data file (.dat, .txt, .csv)</label>
+      <input type="file" id="datafile" name="datafile" accept=".dat,.txt,.csv,.xafs" required>
+      <p class="hint">Two whitespace-separated columns: k (Å⁻¹) and χ(k). Lines starting with # are ignored.</p>
+    </div>
+
+    <details class="advanced">
+      <summary>Advanced parameters (optional)</summary>
+      <div class="grid">
+        <div class="field">
+          <label for="n">Cauchy order (n)</label>
+          <input type="number" id="n" name="n" value="200" min="2" step="1">
+        </div>
+        <div class="field">
+          <label for="na">R-space intervals (na)</label>
+          <input type="number" id="na" name="na" value="200" min="10" step="1">
+        </div>
+        <div class="field">
+          <label for="ri">Min R (Å)</label>
+          <input type="number" id="ri" name="ri" value="0.2" min="0" step="0.1">
+        </div>
+        <div class="field">
+          <label for="rf">Max R (Å)</label>
+          <input type="number" id="rf" name="rf" value="6.0" min="0.5" step="0.1">
+        </div>
+        <div class="field">
+          <label for="kin">Initial k (optional)</label>
+          <input type="number" id="kin" name="kin" step="0.01" placeholder="from data">
+        </div>
+        <div class="field">
+          <label for="kfin">Final k (optional)</label>
+          <input type="number" id="kfin" name="kfin" step="0.01" placeholder="from data">
+        </div>
+      </div>
+    </details>
+
+    <button type="submit" class="btn-primary">Run CCWT Analysis</button>
+  </form>
+</section>
+
+<section class="card about">
+  <h2>About this method</h2>
+  <p>
+    The Continuous Cauchy Wavelet Transform (CCWT) provides a qualitative,
+    time&ndash;frequency-style view of an EXAFS χ(k) signal, jointly resolving
+    contributions in both k-space and R-space without the windowing artifacts
+    of a plain Fourier transform.
+  </p>
+</section>
+{% endblock %}
