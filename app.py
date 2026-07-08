@@ -149,10 +149,10 @@ def build_wavelet_figure(knew, r, zi):
         template="plotly_white",
         width=520,
         height=740,
-        margin=dict(l=70, r=30, t=210, b=110),
+        margin=dict(l=70, r=30, t=270, b=110),
         updatemenus=[dict(
             buttons=color_buttons, direction="down", pad={"r": 10, "t": 10},
-            showactive=True, x=0.0, xanchor="left", y=1.15, yanchor="top",
+            showactive=True, x=0.0, xanchor="left", y=1.22, yanchor="top",
             bgcolor="#f3f4f6", bordercolor="#9ca3af", borderwidth=1, active=0,
         )],
         sliders=[dict(
