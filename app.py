@@ -12,10 +12,12 @@ app = Flask(__name__)
 
 _session_secret = os.environ.get("SESSION_SECRET")
 if not _session_secret:
-    if os.environ.get("FLASK_DEBUG") == "1" or os.environ.get("REPL_ID"):
-        # Fall back to a random per-process secret in dev so the app still
-        # runs without a configured secret; sessions just won't persist
-        # across restarts. Never used if SESSION_SECRET is set.
+    if os.environ.get("FLASK_DEBUG") == "1":
+        # Fall back to a random per-process secret only in explicit local
+        # dev mode, so the app still runs without a configured secret;
+        # sessions just won't persist across restarts. Never used in
+        # production/deployment -- there, a missing secret must fail fast
+        # rather than silently generate inconsistent per-process secrets.
         _session_secret = os.urandom(32).hex()
     else:
         raise RuntimeError("SESSION_SECRET environment variable must be set.")
