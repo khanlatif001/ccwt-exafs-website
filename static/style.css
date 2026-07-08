@@ -151,6 +151,9 @@ main.wrap {
 
 .plot-card { overflow-x: auto; }
 
+.wavelet-card { display: flex; justify-content: center; }
+.wavelet-plot { margin: 0 auto; }
+
 .plot-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -145,11 +145,12 @@ def build_wavelet_figure(knew, r, zi):
         xaxis_title="k (Å⁻¹)",
         yaxis_title="R (Å)",
         template="plotly_white",
+        width=620,
         height=560,
-        margin=dict(l=70, r=30, t=110, b=110),
+        margin=dict(l=70, r=30, t=190, b=110),
         updatemenus=[dict(
             buttons=color_buttons, direction="down", pad={"r": 10, "t": 10},
-            showactive=True, x=0.0, xanchor="left", y=1.14, yanchor="top",
+            showactive=True, x=0.0, xanchor="left", y=1.28, yanchor="top",
             bgcolor="#f3f4f6", bordercolor="#9ca3af", borderwidth=1, active=0,
         )],
         sliders=[dict(
@@ -206,7 +207,13 @@ def analyze():
     # The wavelet plot renders first in results.html, so it must be the one
     # that loads the Plotly.js library (via CDN); the others reuse it.
     plot_config = {"displaylogo": False, "responsive": True}
-    wavelet_html = wavelet_fig.to_html(full_html=False, include_plotlyjs="cdn", config=plot_config)
+    # The wavelet heatmap has a fixed, deliberately narrow width, so it should
+    # not stretch to fill its container like the other (responsive) plots.
+    wavelet_config = {"displaylogo": False, "responsive": False}
+    wavelet_html = wavelet_fig.to_html(
+        full_html=False, include_plotlyjs="cdn", config=wavelet_config,
+        default_width="620px", default_height="560px",
+    )
     exafs_html = exafs_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
     ft_html = ft_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
 

@@ -7,8 +7,8 @@
   <a class="btn-secondary" href="{{ url_for('index') }}">&larr; Analyze another file</a>
 </section>
 
-<section class="card plot-card">
-  <div>{{ wavelet_html|safe }}</div>
+<section class="card plot-card wavelet-card">
+  <div class="wavelet-plot">{{ wavelet_html|safe }}</div>
 </section>
 
 <div class="plot-row">
