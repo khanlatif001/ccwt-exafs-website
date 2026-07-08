@@ -97,6 +97,7 @@ def build_exafs_figure(knew, xnew):
         template="plotly_white",
         margin=dict(l=60, r=30, t=50, b=50),
         height=380,
+        xaxis=dict(dtick=1),
     )
     return fig
 
@@ -153,6 +154,7 @@ def build_wavelet_figure(knew, r, zi):
         width=520,
         height=740,
         margin=dict(l=70, r=30, t=270, b=110),
+        xaxis=dict(dtick=1),
         updatemenus=[dict(
             buttons=color_buttons, direction="down", pad={"r": 10, "t": 10},
             showactive=True, x=0.0, xanchor="left", y=1.22, yanchor="top",
