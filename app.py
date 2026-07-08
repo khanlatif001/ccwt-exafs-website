@@ -148,17 +148,17 @@ def build_wavelet_figure(knew, r, zi):
         font=dict(size=14),
         template="plotly_white",
         width=520,
-        height=520,
+        height=740,
         margin=dict(l=70, r=30, t=210, b=110),
         updatemenus=[dict(
             buttons=color_buttons, direction="down", pad={"r": 10, "t": 10},
-            showactive=True, x=0.0, xanchor="left", y=1.55, yanchor="top",
+            showactive=True, x=0.0, xanchor="left", y=1.15, yanchor="top",
             bgcolor="#f3f4f6", bordercolor="#9ca3af", borderwidth=1, active=0,
         )],
         sliders=[dict(
             active=len(slider_steps) - 1, currentvalue={"prefix": "Contrast: "},
             pad={"t": 40}, steps=slider_steps, bordercolor="#e5e7eb", borderwidth=1,
-            x=0.0, xanchor="left", y=-0.18, yanchor="top",
+            x=0.0, xanchor="left", y=-0.13, yanchor="top",
         )],
     )
     # Keep the k/R axes true to their data aspect so the published figure
@@ -218,7 +218,7 @@ def analyze():
     wavelet_config = {"displaylogo": False, "responsive": False}
     wavelet_html = wavelet_fig.to_html(
         full_html=False, include_plotlyjs="cdn", config=wavelet_config,
-        default_width="520px", default_height="520px",
+        default_width="520px", default_height="740px",
     )
     exafs_html = exafs_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
     ft_html = ft_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
