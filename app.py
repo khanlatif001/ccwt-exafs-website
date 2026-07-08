@@ -141,24 +141,30 @@ def build_wavelet_figure(knew, r, zi):
         ))
 
     fig.update_layout(
-        title=dict(text="Continuous Cauchy Wavelet Transform", x=0.5, xanchor="center"),
+        title=dict(text="Continuous Cauchy Wavelet Transform", x=0.5, xanchor="center",
+                    font=dict(size=18)),
         xaxis_title="k (Å⁻¹)",
         yaxis_title="R (Å)",
+        font=dict(size=14),
         template="plotly_white",
-        width=620,
-        height=560,
-        margin=dict(l=70, r=30, t=190, b=110),
+        width=420,
+        height=820,
+        margin=dict(l=80, r=30, t=170, b=130),
         updatemenus=[dict(
             buttons=color_buttons, direction="down", pad={"r": 10, "t": 10},
-            showactive=True, x=0.0, xanchor="left", y=1.28, yanchor="top",
+            showactive=True, x=0.0, xanchor="left", y=1.16, yanchor="top",
             bgcolor="#f3f4f6", bordercolor="#9ca3af", borderwidth=1, active=0,
         )],
         sliders=[dict(
             active=len(slider_steps) - 1, currentvalue={"prefix": "Contrast: "},
-            pad={"t": 50}, steps=slider_steps, bordercolor="#e5e7eb", borderwidth=1,
-            x=0.0, xanchor="left", y=-0.16, yanchor="top",
+            pad={"t": 40}, steps=slider_steps, bordercolor="#e5e7eb", borderwidth=1,
+            x=0.0, xanchor="left", y=-0.09, yanchor="top",
         )],
     )
+    # Keep the k/R axes true to their data aspect so the published figure
+    # isn't visually distorted by the narrow/tall canvas.
+    fig.update_yaxes(constrain="domain")
+    fig.update_xaxes(constrain="domain")
     return fig
 
 
@@ -212,7 +218,7 @@ def analyze():
     wavelet_config = {"displaylogo": False, "responsive": False}
     wavelet_html = wavelet_fig.to_html(
         full_html=False, include_plotlyjs="cdn", config=wavelet_config,
-        default_width="620px", default_height="560px",
+        default_width="420px", default_height="820px",
     )
     exafs_html = exafs_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
     ft_html = ft_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
