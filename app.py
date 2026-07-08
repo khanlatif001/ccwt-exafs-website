@@ -148,11 +148,11 @@ def build_wavelet_figure(knew, r, zi):
         font=dict(size=14),
         template="plotly_white",
         width=520,
-        height=420,
-        margin=dict(l=70, r=30, t=150, b=110),
+        height=520,
+        margin=dict(l=70, r=30, t=210, b=110),
         updatemenus=[dict(
             buttons=color_buttons, direction="down", pad={"r": 10, "t": 10},
-            showactive=True, x=0.0, xanchor="left", y=1.38, yanchor="top",
+            showactive=True, x=0.0, xanchor="left", y=1.55, yanchor="top",
             bgcolor="#f3f4f6", bordercolor="#9ca3af", borderwidth=1, active=0,
         )],
         sliders=[dict(
@@ -218,7 +218,7 @@ def analyze():
     wavelet_config = {"displaylogo": False, "responsive": False}
     wavelet_html = wavelet_fig.to_html(
         full_html=False, include_plotlyjs="cdn", config=wavelet_config,
-        default_width="520px", default_height="420px",
+        default_width="520px", default_height="520px",
     )
     exafs_html = exafs_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
     ft_html = ft_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
