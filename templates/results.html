@@ -9,6 +9,19 @@
 
 <section class="card plot-card wavelet-card">
   <div class="wavelet-plot">{{ wavelet_html|safe }}</div>
+  <script>
+    (function () {
+      var gd = document.getElementById("wavelet-plot-div");
+      if (!gd) return;
+      gd.on("plotly_restyle", function (data) {
+        var update = Array.isArray(data) ? data[0] : data;
+        var scale = update && update.colorscale && update.colorscale[0];
+        if (scale && gd._context && gd._context.toImageButtonOptions) {
+          gd._context.toImageButtonOptions.filename = "ccwt_wavelet_map_" + String(scale).toLowerCase();
+        }
+      });
+    })();
+  </script>
 </section>
 
 <div class="plot-row">

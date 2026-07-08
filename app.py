@@ -35,6 +35,7 @@ COLORSCALES = [
     "RdBu", "RdYlBu", "RdYlGn", "Spectral",
     "Twilight", "Bluered",
 ]
+DEFAULT_COLORSCALE = COLORSCALES[0]
 
 
 def allowed_file(filename):
@@ -217,10 +218,22 @@ def analyze():
     plot_config = {"displaylogo": False, "responsive": True}
     # The wavelet heatmap has a fixed, deliberately narrow width, so it should
     # not stretch to fill its container like the other (responsive) plots.
-    wavelet_config = {"displaylogo": False, "responsive": False}
+    # toImageButtonOptions makes the "download plot as image" camera button
+    # in the modebar produce a publication-quality PNG (2x scale); the
+    # filename is kept in sync with the selected colormap by JS in
+    # results.html so exports are named after what's actually shown.
+    wavelet_config = {
+        "displaylogo": False,
+        "responsive": False,
+        "toImageButtonOptions": {
+            "format": "png",
+            "filename": f"ccwt_wavelet_map_{DEFAULT_COLORSCALE.lower()}",
+            "scale": 3,
+        },
+    }
     wavelet_html = wavelet_fig.to_html(
         full_html=False, include_plotlyjs="cdn", config=wavelet_config,
-        default_width="520px", default_height="740px",
+        default_width="520px", default_height="740px", div_id="wavelet-plot-div",
     )
     exafs_html = exafs_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
     ft_html = ft_fig.to_html(full_html=False, include_plotlyjs=False, config=plot_config)
