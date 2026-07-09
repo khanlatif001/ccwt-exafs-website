@@ -38,14 +38,35 @@ A web-based analysis tool designed to compute the Continuous Cauchy Wavelet Tran
 ├── pyproject.toml        # Project dependencies and configuration
 └── README.md             # Project documentation
 
----
-## 🔬 References
+```
 
-1. Khan, L. U., Jabeen, N., & et al. (2021). Investigating local structure of ion-implanted (Ni2+) and thermally annealed rocksalt CoO film by EXAFS simulation using evolutionary algorithm. ACS Applied Energy Materials, 4(3), 2049–2055. https://doi.org/10.1021/acsaem.0c02740
-2. Khan, L. U., Khan, Z. U., Blois, L., Tabassam, L., Brito, H. F., & Figueroa, S. J. A. (2023). Strategy to probe the local atomic structure of luminescent rare earth complexes by X-ray absorption near-edge spectroscopy simulation using a machine learning-based PyFitIt approach. Inorganic Chemistry, 62(6), 2738–2750. https://doi.org/10.1021/acs.inorgchem.2c03823
 ---
+
 ## 🔬 Method
 
-Original code: http://www.univ-mlv.fr/~farges/waw
+The Continuous Cauchy Wavelet Transform (CCWT) implemented in this project is based on:
 
-Munoz M., Argoul P., & Farges F. (2003). Continuous Cauchy wavelet transform analyses of EXAFS spectra: a qualitative approach. American Mineralogist, 88, 694–700.
+Munoz, M., Argoul, P., & Farges, F. (2003).
+*Continuous Cauchy wavelet transform analyses of EXAFS spectra: A qualitative approach.*
+**American Mineralogist**, **88**, 694–700.
+
+Original implementation:
+http://www.univ-mlv.fr/~farges/waw
+
+Munoz, M., Argoul, P., & Farges, F. (2003). *Continuous Cauchy wavelet transform analyses of EXAFS spectra: A qualitative approach.* **American Mineralogist**, **88**, 694–700.
+
+---
+
+## 📚 References
+
+1. Khan, L. U., Jabeen, N., *et al.* (2021).
+   *Investigating local structure of ion-implanted (Ni²⁺) and thermally annealed rocksalt CoO film by EXAFS simulation using evolutionary algorithm.*
+   **ACS Applied Energy Materials**, **4**(3), 2049–2055.
+   https://doi.org/10.1021/acsaem.0c02740
+
+2. Khan, L. U., Khan, Z. U., Blois, L., Tabassam, L., Brito, H. F., & Figueroa, S. J. A. (2023).
+   *Strategy to probe the local atomic structure of luminescent rare earth complexes by X-ray absorption near-edge spectroscopy simulation using a machine learning-based PyFitIt approach.*
+   **Inorganic Chemistry**, **62**(6), 2738–2750.
+   https://doi.org/10.1021/acs.inorgchem.2c03823
+
+
