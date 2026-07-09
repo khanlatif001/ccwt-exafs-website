@@ -2,12 +2,19 @@
 
 # Continuous Cauchy Wavelet Transform (CCWT) for EXAFS Signals
 
-A web-based analysis tool designed to compute the Continuous Cauchy Wavelet Transform (CCWT) of Extended X-ray Absorption Fine Structure (EXAFS) data. This application provides a qualitative, time-frequency-style view of an EXAFS $\chi(k)$ signal, jointly resolving contributions in both k-space and R-space without the windowing artifacts associated with a standard Fourier transform.
+A web-based scientific application for analyzing **Extended X-ray Absorption Fine Structure (EXAFS)** data using the **Continuous Cauchy Wavelet Transform (CCWT)**.
 
-**Run the app for free: https://ccwt-exafs-website.onrender.com**
+The application provides a qualitative **time-frequency-style view** of EXAFS $\chi(k)$ oscillations, enabling simultaneous visualization of structural contributions in both **k-space** and **R-space**. Unlike conventional Fourier transform approaches, CCWT preserves localized information and reduces artifacts associated with fixed window functions.
 
-**Run the app paid: https://ccwt-exafs-website--latifkhn.replit.app**
+---
 
+## 🌐 Online Demo / Run App
+
+### 🆓 Free Deployment
+https://ccwt-exafs-website.onrender.com
+
+### 🚀 Premium Deployment
+https://ccwt-exafs-website--latifkhn.replit.app
 ---
 
 ## 🚀 Features
