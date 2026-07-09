@@ -6,6 +6,8 @@ A web-based analysis tool designed to compute the Continuous Cauchy Wavelet Tran
 
 **Run the app for free: https://ccwt-exafs-website.onrender.com**
 
+**Run the app paid: https://ccwt-exafs-website--latifkhn.replit.app**
+
 ---
 
 ## 🚀 Features
