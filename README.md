@@ -8,7 +8,7 @@ The application provides a qualitative **time-frequency-style view** of EXAFS $\
 
 ---
 
-## 🌐 Online Demo / Run App
+## 🌐 Online Run App / Analyze EXAFS Data
 
 ### 🆓 Free Deployment
 https://ccwt-exafs-website.onrender.com
