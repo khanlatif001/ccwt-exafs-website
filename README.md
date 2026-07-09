@@ -49,9 +49,6 @@ Munoz, M., Argoul, P., & Farges, F. (2003).
 *Continuous Cauchy wavelet transform analyses of EXAFS spectra: A qualitative approach.*
 **American Mineralogist**, **88**, 694–700.
 
-Original implementation:
-http://www.univ-mlv.fr/~farges/waw
-
 ---
 
 ## 📚 References
