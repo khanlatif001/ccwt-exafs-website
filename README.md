@@ -38,7 +38,7 @@ A web-based analysis tool designed to compute the Continuous Cauchy Wavelet Tran
 ├── pyproject.toml        # Project dependencies and configuration
 └── README.md             # Project documentation
 
-```
+---
 
 ---
 
