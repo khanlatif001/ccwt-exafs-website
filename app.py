@@ -111,7 +111,7 @@ def build_ft_figure(freq, ft_magnitude):
         template="plotly_white",
         margin=dict(l=60, r=30, t=50, b=50),
         height=380,
-        xaxis=dict(range=[0, 6]),
+        xaxis=dict(range=[0, 6], dtick=1),
     )
     return fig
 
