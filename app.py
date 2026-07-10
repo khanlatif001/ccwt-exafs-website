@@ -89,29 +89,33 @@ def int_field(form, name, default):
 
 
 def build_exafs_figure(knew, xnew):
-    fig = go.Figure(data=[go.Scatter(x=knew, y=xnew, mode="lines", line=dict(color="#2563eb"))])
+    fig = go.Figure(data=[go.Scatter(x=knew, y=xnew, mode="lines", line=dict(color="#2563eb", width=2.5))])
     fig.update_layout(
-        title="Interpolated EXAFS Data",
+        title=dict(text="Interpolated EXAFS Data", font=dict(size=20, color="#0f172a", family="Arial, sans-serif")),
         xaxis_title="k (Å⁻¹)",
         yaxis_title="χ(k)",
         template="plotly_white",
         margin=dict(l=60, r=30, t=50, b=50),
         height=380,
-        xaxis=dict(dtick=1),
+        font=dict(size=15),
+        xaxis=dict(dtick=1, title_font=dict(size=17), tickfont=dict(size=14)),
+        yaxis=dict(title_font=dict(size=17), tickfont=dict(size=14)),
     )
     return fig
 
 
 def build_ft_figure(freq, ft_magnitude):
-    fig = go.Figure(data=[go.Scatter(x=freq * np.pi, y=ft_magnitude, mode="lines", line=dict(color="#7c3aed"))])
+    fig = go.Figure(data=[go.Scatter(x=freq * np.pi, y=ft_magnitude, mode="lines", line=dict(color="#7c3aed", width=2.5))])
     fig.update_layout(
-        title="Fourier Transform",
+        title=dict(text="Fourier Transform", font=dict(size=20, color="#0f172a", family="Arial, sans-serif")),
         xaxis_title="R (Å)",
         yaxis_title="FT Magnitude",
         template="plotly_white",
         margin=dict(l=60, r=30, t=50, b=50),
         height=380,
-        xaxis=dict(range=[0, 6], dtick=1),
+        font=dict(size=15),
+        xaxis=dict(range=[0, 6], dtick=1, title_font=dict(size=17), tickfont=dict(size=14)),
+        yaxis=dict(title_font=dict(size=17), tickfont=dict(size=14)),
     )
     return fig
 
@@ -146,7 +150,7 @@ def build_wavelet_figure(knew, r, zi):
 
     fig.update_layout(
         title=dict(text="Continuous Cauchy Wavelet Transform", x=0.5, xanchor="center",
-                    font=dict(size=18)),
+                    font=dict(size=20, color="#0f172a", family="Arial, sans-serif")),
         xaxis_title="k (Å⁻¹)",
         yaxis_title="R (Å)",
         font=dict(size=14),
